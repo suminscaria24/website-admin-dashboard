@@ -1,0 +1,221 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    overflow: hidden;
+}
+
+.sidebar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 70px; /*70px*/
+    background: #11101d;
+    padding: 10px 10px;
+    transition: all 0.5s ease;
+}
+.sidebar.active{
+    width: 70px;
+}
+
+.sidebar .logo_content .logo{
+    color: #efff;
+    display: flex;
+    height: 50px;
+    width: 100%;
+    align-items: center;
+    opacity: 1;
+    pointer-events: none;
+    transition: all 0.5s ease;
+}
+
+.sidebar.active .logo_content .logo{
+    opacity: 0;
+    pointer-events: none;
+}
+
+.logo_content .logo #icon_home{
+    font-size: 20px;
+    margin-right: 15px;
+}
+
+.logo_content .logo img{
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 90px;
+    margin-right: 20px;
+}
+
+.logo_content .logo .logo_name{
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.sidebar ul{
+    margin-top: 10px;
+    padding: 0px 10px;
+}
+
+.sidebar ul li{
+    position: relative;
+    height: 50px;
+    width: 100%;
+    margin: 0 5px;
+    list-style: none;
+    line-height: 50px;
+    font-size: 10px;
+}
+
+.sidebar ul li a #icon{
+    height: 20px;
+    min-height: 20px;
+    border-radius: 12px;
+    line-height: 50px;
+    text-align: center;
+    margin-right: 30px;
+    color: rgb(106, 120, 120);
+}
+
+.home_content .profile_content{
+    position: relative;
+    color: rgb(72, 112, 112);
+    margin-top: 10px;
+    text-align: center;
+    opacity: 1;
+    pointer-events: none;
+    white-space: nowrap;
+    transition: all 0.5s ease;
+}
+
+/* ..active .profile_content{
+    opacity: 0;
+    pointer-events: auto;
+} */
+
+.profile .profile_details img{
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 90px;
+}
+
+.profile .profile_details .name{
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.home_content{
+    position: absolute;
+    height: 100%;
+    width: calc(100%-70px);
+    right:30px;
+    left: 70px;
+    transition: all 0.5s ease;
+}
+
+.sidebar.active ~ .home_content{
+    width: calc(100%-350px);
+    left: 350px;
+}
+.home_content .container{
+    right:30px;
+}
+.card-row{
+    height: 20%;
+    margin-right: 30px;
+}
+
+.card{
+    transition: 0.5s;
+}
+    .card:hover{
+        transition: scale(1.05);
+        box-shadow: 10px 10px 15px rgba(0,0,0,0.3);
+    }
+
+    .card::before, .card::after{
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        transform: scale3d(0,0,1);
+        transition: transform .3s ease-out 0s;
+        background: rgba(255,255,255,0.1);
+        content: '';
+        pointer-events: none;
+    }
+
+    .card::before{
+        transform-origin: left top;
+    }
+
+    .card::after{
+        transform-origin: right bottom;
+    }
+    .card:hover::before, .card:hover::after, .card:focus::before, .card:focus::after{
+        transform: scale3d(1,1,1);
+    }
+    .home_content .container{
+        height:20px;
+        min-height: 10px;
+        margin-top: 10%;
+    }
+    .home_content .container .card-row #icon{
+        height: 10px;
+        min-height: 20px;
+        border-radius: 12px;
+        line-height: 50px;
+        text-align: center;
+        margin-right: 30px;
+        color: rgb(106, 120, 120);
+    }
+
+    .home_content .container #my-pie-chart {
+        height: 100px;
+        width: 100px;
+        border-radius: 50%;
+        background: conic-gradient(rgba(165, 42, 155, 0.386) 10%, rgb(133, 126, 134) 20%, rgb(206, 12, 12) 25%, rgb(237, 7, 203) 15%, rgb(101, 6, 68) 5%, rgb(193, 44, 201) 5%, rgb(146, 8, 79) 20%);
+    }
+.header,footer{
+    position: absolute;
+    background-color: #000;
+    width:100%;
+    color: white;
+}
+.header h4{
+
+    position: absolute;
+    margin-top: 20px;
+    left: 15%;
+}
+.header{
+    height: 50px;
+}
+
+footer{
+    height: 70px;
+    bottom:0;
+}
+footer h4{
+    position: absolute;
+    left: 45%;
+}
+.nav{
+    position: absolute;
+    width: 100%;
+}
+.nav a{
+    position: relative;
+    left: 90%;
+    top: 20px;
+    color: white;
+    text-decoration: none;
+}
